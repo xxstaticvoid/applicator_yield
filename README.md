@@ -5,7 +5,7 @@
 **yield_application.py** is the main python file and will run the program for graphing (reading from data file) **graphing.py**, and the screenshot program (writing to data file) **yield_calculator.py**. Together these scripts allow the technicians to track manufaturing yield as a perentage of good parts made out of the total parts (including defects). This helps the technicians be able to track performance of the machines based on changes and alterations and determine if improvements need to be made or if the work done was sufficient. 
 
 
-![normal kpi from factory](images/APP_KPI2_example.png)
+![normal kpi from factory](images/APP_KPI2_example.PNG)
 
 
 

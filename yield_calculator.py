@@ -9,7 +9,7 @@ import pytesseract
 minute_yields = [0]
 cwd = os.getcwd()
 pytesseract.pytesseract.tesseract_cmd = r'C:\Users\aurjeber\AppData\Local\Programs\Tesseract-OCR\tesseract.exe'
-
+###change to location of tesseract.exe ^^^
 
 
 def delete_file(file_path) -> bool:
@@ -26,12 +26,9 @@ def capture_screen():
         print("Error in screenshot")
         exit(1)
     else:
-        #print(f"{filename} saved in {cwd}")
-        #^^^ UNCOMMENT TO SHOW WHERE FILE WAS STORED
-        #ONLY USEFUL FOR TROUBLESHOOTING
         kpi_file_path = os.path.join(cwd, filename)
 
-        total_and_reject_bbox = (214, 176, 288, 331)
+        total_and_reject_bbox = (214, 176, 288, 331)    ###screenshot box dimensions for yield [WILL NEED TO CHNAGE BASED ON SCREEN RESOLUTION]
         try:
             cropped_image = kpi_screen_shot.crop(total_and_reject_bbox)
         except:
@@ -58,9 +55,11 @@ def extract_nums_from_png(image):
     #print(f"Found: {text} in image")
     #^^^ UNCOMMENT IF YOU WANT TO PRINT TEXT FOUND IN IMAGE
     #ONLY USEFUL FOR TROUBLESHOOTING
-    text.strip()
-    text = re.sub(',', '', text)
-    numbers = re.findall(r"\d+", text)
+
+    #format text from screenshot
+    text.strip()    ##delete whitespace
+    text = re.sub(',', '', text)    ##delete commas
+    numbers = re.findall(r"\d+", text)    ##filter by numbers
     
     nums = [int(x) for x in numbers]
     if len(nums) == 2:

@@ -9,6 +9,6 @@ The **yield_calculatior.py** script is taking a screenshot of the factory KPI ev
 
 When running the program the user's view looks like running_example.png. 
 
-![picture of program while running](./running_example.png)
+![picture of program while running](images/running_example.png)
 
 
